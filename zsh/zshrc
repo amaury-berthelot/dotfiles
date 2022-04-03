@@ -1,0 +1,18 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/asi/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+source ~/.dotfiles/zsh/git-prompt.sh
+setopt PROMPT_SUBST ; PS1='[%c$(__git_ps1 " (%s)")] \$ '
+
+source ~/.dotfiles/zsh/aliases
+
+source ~/.dotfiles/local/partial/zshrc

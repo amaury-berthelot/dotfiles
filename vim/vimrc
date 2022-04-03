@@ -1,0 +1,10 @@
+source ~/.dotfiles/vim/config.vim
+source ~/.dotfiles/vim/shortcuts/index.vim
+
+call plug#begin()
+
+source ~/.dotfiles/local/vim/plugins.vim
+
+call plug#end()
+
+source ~/.dotfiles/local/vim/init.vim
