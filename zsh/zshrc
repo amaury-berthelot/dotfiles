@@ -11,8 +11,8 @@ compinit
 # End of lines added by compinstall
 
 source ~/.dotfiles/zsh/git-prompt.sh
-setopt PROMPT_SUBST ; PS1='[%c$(__git_ps1 " (%s)")] \$ '
+setopt PROMPT_SUBST ; PS1='[%~$(__git_ps1 " (%s)")] \$ '
 
 source ~/.dotfiles/zsh/aliases
-
+source ~/.dotfiles/zsh/functions/*
 source ~/.dotfiles/local/partial/zshrc
