@@ -1,1 +1,1 @@
-u BufReadPost *.svelte set syntax=html
+au BufReadPost *.svelte set syntax=html

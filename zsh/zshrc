@@ -15,4 +15,4 @@ setopt PROMPT_SUBST ; PS1='[%~$(__git_ps1 " (%s)")] \$ '
 
 source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/functions/*
-source ~/.dotfiles/local/partial/zshrc
+source ~/.dotfiles/local/zsh/zshrc

@@ -1,11 +1,13 @@
 #!/bin/bash
 
+SHELL=zsh
+
 if [[ $1 == "create" ]] ; then
   if [[ $# -ne 4 ]]; then
     echo "$0 create <name> <image> <workspace>"
     exit 1
   else
-    docker run -it --name $2 -v $4:/home/dev/workspace --network=host --user=dev $3 bash
+    docker run -it --name $2 -v $4:/home/dev/workspace --network=host --user=dev $3 $SHELL
     exit 0
   fi
 elif [[ $1 == "start" ]]; then
@@ -21,7 +23,7 @@ elif [[ $1 == "attach" ]]; then
     echo "$0 attach <name>"
     exit 1
   else
-    docker exec -it $2 bash
+    docker exec -it $2 $SHELL
     exit 0
   fi
 elif [[ $1 == "root" ]]; then
@@ -29,7 +31,7 @@ elif [[ $1 == "root" ]]; then
     echo "$0 root <name>"
     exit 1
   else
-    docker exec -it --user=root $2 bash
+    docker exec -it --user=root $2 $SHELL
     exit 0
   fi
 else

@@ -8,3 +8,6 @@
 " JavaScript
 "source ~/.dotfiles/neovim/configs/javascript.vim
 "source ~/.dotfiles/neovim/configs/javascript.svelte.vim
+
+" Go
+"source ~/.dotfiles/neovim/configs/go.vim
