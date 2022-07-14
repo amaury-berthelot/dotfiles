@@ -1,7 +1,7 @@
 alias l="ls -lh"
 alias la="ls -lah"
 
-tarenc() { tar -cz $1 | openssl aes-256-cbc -e -out local.enc; }
+tarenc() { tar -cz $1 | openssl aes-256-cbc -e -out $1.enc; }
 tardec() { openssl aes-256-cbc -d -in $1 | tar -xz; }
 
 alias g="git"

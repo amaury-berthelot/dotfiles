@@ -11,7 +11,7 @@ wget https://github.com/nvm-sh/nvm/archive/refs/tags/v$VERSION.tar.gz
 tar -C $INSTALL_PATH/$VERSION -xzf v$VERSION.tar.gz
 rm v$VERSION.tar.gz
 
-rm $INSTALL_PATH/current
+rm -f $INSTALL_PATH/current
 ln -s $INSTALL_PATH/$VERSION/nvm-$VERSION $INSTALL_PATH/current
 
 echo "" >> $SHELL_CONFIG_FILE

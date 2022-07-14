@@ -24,6 +24,7 @@
   "explorer.openEditors.visible": 0,
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
+  "files.autoSave": "off",
   "files.associations": {
     "*.svelte": "html"
   },
@@ -51,9 +52,9 @@
   "scss.lint.duplicateProperties": "warning",
   "search.quickOpen.includeHistory": false,
   "sonarlint.disableTelemetry": true,
-  "sonarlint.ls.javaHome": "/home/asi/.local/apps/java/current",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "typescript.check.npmIsInstalled": false,
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.suggest.completeFunctionCalls": true,
@@ -62,13 +63,22 @@
   "update.mode": "none",
   "update.showReleaseNotes": false,
   "vetur.completion.tagCasing": "initial",
-  "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["<leader>", "w"], "after": [":", "w", "<CR>"] }
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] }
   ],
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "$HOME/.vim/vimrc",
-  "window.menuBarVisibility": "toggle",
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    { "before": ["o"], "after": ["o", "<Esc>"] },
+    { "before": ["O"], "after": ["O", "<Esc>"] },
+    { "before": ["<leader>", "£"], "after": ["^"] },
+    { "before": ["<leader>", "w"], "after": [":", "w", "<CR>"] },
+    { "before": ["<leader>", "q"], "after": [":", "q", "<CR>"] },
+    { "before": ["<leader>", "Q"], "after": [":", "qa", "<CR>"] },
+    { "before": ["<leader>", "ss"], "after": [":", ":sp", "<CR>"] },
+    { "before": ["<leader>", "sv"], "after": [":", ":vs", "<CR>"] }
+  ],
+  "vim.useSystemClipboard": true,
+  "window.menuBarVisibility": "classic",
   "window.newWindowDimensions": "inherit",
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}",
@@ -467,6 +477,5 @@
     "Web:WhiteSpaceAroundCheck": {
       "level": "on"
     }
-  },
-  "vim.useSystemClipboard": true
+  }
 }
