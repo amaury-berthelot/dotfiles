@@ -1,0 +1,4 @@
+/.netrwhist
+/autoload/*
+!/autoload/.gitkeep
+/plugged/

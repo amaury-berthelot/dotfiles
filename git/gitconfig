@@ -1,0 +1,64 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+
+[pull]
+  rebase = true
+
+[fetch]
+  prune = true
+  pruneTags = true
+
+[user]
+  name = 
+  email = 
+
+[merge]
+  tool = intellij-idea
+
+[mergetool]
+  keepBackup = false
+
+[mergetool "intellij-idea"]
+  cmd = idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+  trustExitCode = true
+
+[diff]
+  tool = intellij-idea
+
+[difftool "intellij-idea"]
+  cmd = idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+
+[alias]
+  cm = commit
+  cmf = commit --fixup
+  cmae = commit --allow-empty --allow-empty-message
+  co = checkout
+  br = branch
+  dt = difftool -d
+  mt = mergetool
+  st = status
+  last = log -1
+  pick = cherry-pick
+  amend = commit --amend --reset-author
+  append = commit --amend --no-edit
+  graph = log --graph --oneline --decorate --all
+  ss = push
+  sg = pull
+  sgas = pull --autostash
+  sf = fetch
+  sm = submodule
+  ignore = update-index --assume-unchanged
+  lbr = branch --sort=committerdate --verbose
+  wip = !git commit --no-verify -m \"WIP: $(date -R)\"
+  history = "!f() { if [ $# -eq 1 ]; then git log --follow -- $1; elif [ $# -eq 2 ]; then git log -L $2,+1:$1; elif [ $# -eq 3 ] ; then git log -L $2,$3:$1; else echo 'git history <file> [start] [end]'; fi }; f"
+  dtcm = "!f() { if [ $# -eq 1 ] ; then git difftool -d $1~; else echo 'git dtcommit <commit>'; fi }; f"
+  lubr = "!f() { git branch -a | grep $1; }; f"
+  luco = "!f() { git branch | grep $1 | xargs git checkout; }; f"
+  who = "!f() { git history $@; }; f"
+  cmm = "!f() { git commit -em \"#$(git show -s --format=\"%h %s\" $1)\"; }; f"
+  bralias = "!f() { git symbolic-ref refs/heads/$1 refs/heads/$2; }; f"
+  tidyup = "!git fetch -p && git branch -vv | grep '[.*: gone]' | awk '{print $1}' | xargs git branch -D"
+
+[include]
+  path = ~/.dotfiles/local/git/gitconfig

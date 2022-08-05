@@ -1,0 +1,12 @@
+alias l="ls -lh"
+alias la="ls -lah"
+alias port="ss -tulpn | grep $1"
+
+alias g="git"
+alias n="npm"
+alias nr="npm run"
+
+mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
+
+tarenc() { tar -cz $1 | openssl aes-256-cbc -e -out $1.enc; }
+tardec() { openssl aes-256-cbc -d -in $1 | tar -xz; }

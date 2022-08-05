@@ -1,0 +1,7 @@
+call plug#begin()
+
+source ~/.dotfiles/local/vim/configs.vim
+
+call plug#end()
+
+source ~/.dotfiles/local/vim/init.vim

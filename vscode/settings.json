@@ -1,0 +1,481 @@
+{
+  "breadcrumbs.enabled": true,
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-chrome": "custom"
+  },
+  "debug.openDebug": "neverOpen",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": false,
+  "editor.largeFileOptimizations": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "deepIndent",
+  "explorer.autoReveal": false,
+  "explorer.openEditors.visible": 0,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "files.autoSave": "off",
+  "files.associations": {
+    "*.svelte": "html"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.pullRequests.enabled": false,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "html.format.endWithNewline": true,
+  "html.format.wrapAttributes": "aligned-multiple",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "json.schemaDownload.enable": false,
+  "npm.autoDetect": "off",
+  "npm.fetchOnlinePackageInfo": false,
+  "scss.lint.duplicateProperties": "warning",
+  "search.quickOpen.includeHistory": false,
+  "sonarlint.disableTelemetry": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "typescript.check.npmIsInstalled": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.surveys.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "vetur.completion.tagCasing": "initial",
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] }
+  ],
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    { "before": ["o"], "after": ["o", "<Esc>"] },
+    { "before": ["O"], "after": ["O", "<Esc>"] },
+    { "before": ["£"], "after": ["^"] },
+    { "before": ["<leader>", "w"], "after": [":", "w", "<CR>"] },
+    { "before": ["<leader>", "q"], "after": [":", "q", "<CR>"] },
+    { "before": ["<leader>", "Q"], "after": [":", "qa", "<CR>"] },
+    { "before": ["<leader>", "ss"], "after": [":", ":sp", "<CR>"] },
+    { "before": ["<leader>", "sv"], "after": [":", ":vs", "<CR>"] }
+  ],
+  "vim.useSystemClipboard": true,
+  "window.menuBarVisibility": "classic",
+  "window.newWindowDimensions": "inherit",
+  "window.restoreWindows": "none",
+  "window.title": "${dirty}${rootName}",
+  "workbench.activityBar.visible": false,
+	"workbench.colorTheme": "GitHub Dark",
+  "workbench.editor.wrapTabs": true,
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "sonarlint.rules": {
+    "javascript:S1440": {
+      "level": "on"
+    },
+    "javascript:S1442": {
+      "level": "on"
+    },
+    "javascript:S3513": {
+      "level": "on"
+    },
+    "javascript:S2685": {
+      "level": "on"
+    },
+    "javascript:S4326": {
+      "level": "on"
+    },
+    "javascript:S909": {
+      "level": "on"
+    },
+    "javascript:S4139": {
+      "level": "on"
+    },
+    "javascript:S4138": {
+      "level": "on"
+    },
+    "javascript:S1994": {
+      "level": "on"
+    },
+    "javascript:S1535": {
+      "level": "on"
+    },
+    "javascript:S126": {
+      "level": "on"
+    },
+    "javascript:S3533": {
+      "level": "on"
+    },
+    "javascript:S4619": {
+      "level": "on"
+    },
+    "javascript:S1539": {
+      "level": "on"
+    },
+    "javascript:S131": {
+      "level": "on"
+    },
+    "javascript:S1821": {
+      "level": "on"
+    },
+    "javascript:S2138": {
+      "level": "on"
+    },
+    "javascript:S3735": {
+      "level": "on"
+    },
+    "javascript:S1105": {
+      "level": "on"
+    },
+    "javascript:S3757": {
+      "level": "on"
+    },
+    "javascript:S3760": {
+      "level": "on"
+    },
+    "javascript:S1528": {
+      "level": "on"
+    },
+    "javascript:S1121": {
+      "level": "on"
+    },
+    "javascript:S1125": {
+      "level": "on"
+    },
+    "javascript:S3524": {
+      "level": "off"
+    },
+    "javascript:S2424": {
+      "level": "on"
+    },
+    "javascript:S3525": {
+      "level": "on"
+    },
+    "javascript:S101": {
+      "level": "on"
+    },
+    "javascript:S3776": {
+      "level": "on"
+    },
+    "javascript:S1066": {
+      "level": "on"
+    },
+    "javascript:S139": {
+      "level": "off"
+    },
+    "javascript:S3003": {
+      "level": "on"
+    },
+    "javascript:S134": {
+      "level": "on"
+    },
+    "javascript:S121": {
+      "level": "on"
+    },
+    "javascript:S1541": {
+      "level": "on"
+    },
+    "javascript:S1525": {
+      "level": "on"
+    },
+    "javascript:S3514": {
+      "level": "on"
+    },
+    "javascript:S1067": {
+      "level": "on"
+    },
+    "javascript:S113": {
+      "level": "on"
+    },
+    "javascript:S104": {
+      "level": "on"
+    },
+    "javascript:S100": {
+      "level": "on"
+    },
+    "javascript:S3523": {
+      "level": "on"
+    },
+    "javascript:S1530": {
+      "level": "on"
+    },
+    "javascript:S1226": {
+      "level": "on"
+    },
+    "javascript:S3800": {
+      "level": "on"
+    },
+    "javascript:S1186": {
+      "level": "on"
+    },
+    "javascript:S4144": {
+      "level": "on"
+    },
+    "javascript:S138": {
+      "level": "on"
+    },
+    "javascript:S107": {
+      "level": "on"
+    },
+    "javascript:S3801": {
+      "level": "on"
+    },
+    "javascript:S3863": {
+      "level": "on"
+    },
+    "javascript:S881": {
+      "level": "on"
+    },
+    "javascript:S2260": {
+      "level": "on"
+    },
+    "javascript:S3626": {
+      "level": "on"
+    },
+    "javascript:S1119": {
+      "level": "on"
+    },
+    "javascript:S103": {
+      "level": "on"
+    },
+    "javascript:S1131": {
+      "level": "on"
+    },
+    "javascript:S3696": {
+      "level": "on"
+    },
+    "javascript:S1488": {
+      "level": "on"
+    },
+    "javascript:S2310": {
+      "level": "on"
+    },
+    "javascript:S135": {
+      "level": "on"
+    },
+    "javascript:S109": {
+      "level": "on"
+    },
+    "javascript:S3498": {
+      "level": "on"
+    },
+    "javascript:S2428": {
+      "level": "on"
+    },
+    "javascript:S1848": {
+      "level": "on"
+    },
+    "javascript:S2234": {
+      "level": "on"
+    },
+    "javascript:S2376": {
+      "level": "on"
+    },
+    "javascript:S1441": {
+      "level": "on"
+    },
+    "javascript:S1154": {
+      "level": "on"
+    },
+    "javascript:S125": {
+      "level": "on"
+    },
+    "javascript:S3499": {
+      "level": "on"
+    },
+    "javascript:S4634": {
+      "level": "on"
+    },
+    "javascript:S106": {
+      "level": "on"
+    },
+    "javascript:S122": {
+      "level": "on"
+    },
+    "javascript:S1438": {
+      "level": "on"
+    },
+    "javascript:S1192": {
+      "level": "on"
+    },
+    "javascript:S3402": {
+      "level": "on"
+    },
+    "javascript:S105": {
+      "level": "on"
+    },
+    "javascript:S3786": {
+      "level": "on"
+    },
+    "javascript:S4624": {
+      "level": "on"
+    },
+    "javascript:S3512": {
+      "level": "on"
+    },
+    "javascript:S3358": {
+      "level": "on"
+    },
+    "javascript:S2427": {
+      "level": "on"
+    },
+    "javascript:S1774": {
+      "level": "off"
+    },
+    "javascript:S1451": {
+      "level": "on"
+    },
+    "javascript:S1134": {
+      "level": "on"
+    },
+    "javascript:S1135": {
+      "level": "on"
+    },
+    "javascript:S3723": {
+      "level": "on"
+    },
+    "javascript:S1537": {
+      "level": "off"
+    },
+    "javascript:S3353": {
+      "level": "off"
+    },
+    "javascript:S1172": {
+      "level": "on"
+    },
+    "javascript:S3758": {
+      "level": "on"
+    },
+    "javascript:S117": {
+      "level": "on"
+    },
+    "javascript:S3798": {
+      "level": "off"
+    },
+    "javascript:S1526": {
+      "level": "on"
+    },
+    "javascript:S3504": {
+      "level": "on"
+    },
+    "javascript:S3827": {
+      "level": "on"
+    },
+    "javascript:S2392": {
+      "level": "on"
+    },
+    "javascript:S2817": {
+      "level": "on"
+    },
+    "javascript:S2208": {
+      "level": "on"
+    },
+    "Web:InputWithoutLabelCheck": {
+      "level": "off"
+    },
+    "Web:UnclosedTagCheck": {
+      "level": "on"
+    },
+    "Web:DoubleQuotesCheck": {
+      "level": "on"
+    },
+    "Web:IllegalTagLibsCheck": {
+      "level": "on"
+    },
+    "Web:DynamicJspIncludeCheck": {
+      "level": "on"
+    },
+    "Web:PageWithoutFaviconCheck": {
+      "level": "on"
+    },
+    "Web:ComplexityCheck": {
+      "level": "on"
+    },
+    "Web:FileLengthCheck": {
+      "level": "on"
+    },
+    "Web:WmodeIsWindowCheck": {
+      "level": "on"
+    },
+    "Web:NonConsecutiveHeadingCheck": {
+      "level": "on"
+    },
+    "Web:ImgWithoutWidthOrHeightCheck": {
+      "level": "on"
+    },
+    "Web:LongJavaScriptCheck": {
+      "level": "on"
+    },
+    "Web:UnifiedExpressionCheck": {
+      "level": "on"
+    },
+    "Web:JspScriptletCheck": {
+      "level": "on"
+    },
+    "Web:InternationalizationCheck": {
+      "level": "on"
+    },
+    "Web:MaxLineLengthCheck": {
+      "level": "on"
+    },
+    "Web:LinkToNothingCheck": {
+      "level": "on"
+    },
+    "Web:LinksIdenticalTextsDifferentTargetsCheck": {
+      "level": "on"
+    },
+    "Web:MouseEventWithoutKeyboardEquivalentCheck": {
+      "level": "on"
+    },
+    "Web:MultiplePageDirectivesCheck": {
+      "level": "on"
+    },
+    "Web:IllegalTabCheck": {
+      "level": "on"
+    },
+    "Web:InlineStyleCheck": {
+      "level": "on"
+    },
+    "Web:HeaderCheck": {
+      "level": "on"
+    },
+    "Web:S1436": {
+      "level": "on"
+    },
+    "Web:RequiredAttributeCheck": {
+      "level": "on"
+    },
+    "Web:IllegalElementCheck": {
+      "level": "on"
+    },
+    "Web:IllegalNamespaceCheck": {
+      "level": "on"
+    },
+    "Web:S1829": {
+      "level": "on"
+    },
+    "Web:WhiteSpaceAroundCheck": {
+      "level": "on"
+    }
+  }
+}
