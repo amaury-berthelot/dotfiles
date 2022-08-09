@@ -1,5 +1,3 @@
-Plug 'preservim/nerdtree'
-
 " shortcuts
 " " explorer
 nnoremap <leader>fet :NERDTreeToggle<CR> " toggle

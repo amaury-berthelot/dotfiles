@@ -1,6 +1,3 @@
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 " shortcuts
 " " search file
 nnoremap <leader>sf :GFiles<CR>

@@ -28,22 +28,10 @@ syntax on
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-let g:netrw_keepdir=0
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_winsize=20
-
-autocmd BufNewFile,BufRead *.svelte set syntax=html
-
 nnoremap o o<esc>
 nnoremap O O<esc>
 
 nnoremap £ ^
-
-nnoremap <F3> :Lex %:p:h<CR>
-nnoremap <F2> :Lex<CR>
 
 nnoremap <C-up> <C-w>+
 nnoremap <C-right> <C-w>>
@@ -59,9 +47,17 @@ nnoremap <leader>q :q<CR>
 " close and delete buffer
 nnoremap <leader>Q :bd<CR>
 
-" files
-" " explorer
-nnoremap <leader>fen :Lex<CR> " native explorer at root
+" native explorer
+let g:netrw_keepdir=0
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=20
+" " native explorer at root
+nnoremap <leader>fenr :Lex<CR>
+" " native explorer at current file
+nnoremap <leader>fenf :Lex %:p:h<CR>
 
 " splits
 " " create horizontal
@@ -100,4 +96,3 @@ nnoremap <leader>gft <C-w>gf
 nnoremap <leader>gfh gf
 " " go to tag definition
 nnoremap <leader>gtd <C-]>
-

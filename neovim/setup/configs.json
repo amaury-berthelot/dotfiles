@@ -1,0 +1,57 @@
+[
+  {
+    "id": "base",
+    "active": false,
+    "description": "Base config (should be first in list to avoid conflicts)"
+  },
+  {
+    "id": "local",
+    "active": false,
+    "description": "Local configs"
+  },
+  {
+    "id": "theme",
+    "active": false,
+    "description": "Custom theme"
+  },
+  {
+    "id": "explorer",
+    "active": false,
+    "description": "Enable a file explorer"
+  },
+  {
+    "id": "context",
+    "active": false,
+    "description": "Enable context informations (declarations sticking to top of buffer)"
+  },
+  {
+    "id": "find",
+    "active": false,
+    "description": "Enable find with fuzzy search"
+  },
+  {
+    "id": "git",
+    "active": false,
+    "description": "Enable Git integration"
+  },
+  {
+    "id": "language-servers",
+    "active": false,
+    "description": "Enable language servers"
+  },
+  {
+    "id": "debug",
+    "active": false,
+    "description": "Enable integrated debugger"
+  },
+  {
+    "id": "javascript",
+    "active": false,
+    "description": "Enable plugins for JavaScript language"
+  },
+  {
+    "id": "go",
+    "active": false,
+    "description": "Enable plugins for Go language"
+  }
+]
