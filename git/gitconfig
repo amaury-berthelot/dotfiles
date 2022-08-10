@@ -58,7 +58,7 @@
   who = "!f() { git history $@; }; f"
   cmm = "!f() { git commit -em \"#$(git show -s --format=\"%h %s\" $1)\"; }; f"
   bralias = "!f() { git symbolic-ref refs/heads/$1 refs/heads/$2; }; f"
-  tidyup = "!git fetch -p && git branch -vv | grep '[.*: gone]' | awk '{print $1}' | xargs git branch -D"
+  tidyup = "!git branch -v | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch -D"
 
 [include]
   path = ~/.dotfiles/local/git/gitconfig
