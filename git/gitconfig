@@ -50,6 +50,12 @@
   sm = submodule
   ignore = update-index --assume-unchanged
   lbr = branch --sort=committerdate --verbose
+  stack = "!~/.dotfiles/git/stack.py"
+  k = "stack"
+  kc = "stack checkout"
+  kp = "stack push"
+  ks = "stack status"
+  kr = "stack rebase"
   wip = !git commit --no-verify -m \"WIP: $(date -R)\"
   history = "!f() { if [ $# -eq 1 ]; then git log --follow -- $1; elif [ $# -eq 2 ]; then git log -L $2,+1:$1; elif [ $# -eq 3 ] ; then git log -L $2,$3:$1; else echo 'git history <file> [start] [end]'; fi }; f"
   dtcm = "!f() { if [ $# -eq 1 ] ; then git difftool -d $1~; else echo 'git dtcommit <commit>'; fi }; f"
