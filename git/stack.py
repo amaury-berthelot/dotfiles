@@ -6,32 +6,32 @@ import re
 import subprocess
 
 class Stack:
-    stacked_branch_name_regex = re.compile('^(.*)-(\d+)$')
+    stacked_branch_name_regex = re.compile("^(.*)-(\d+)$")
 
     def __init__(self, branch_name):
         stack_details = self.parse_branch_name(branch_name)
 
-        self.name = stack_details['name']
+        self.name = stack_details["name"]
         self.prefix = self.name + "-"
-        self.current_position = stack_details['number']
+        self.current_position = stack_details["number"]
         self.branches = self.get_branches()
         self.stack_top_position = self.get_higher_branch_number(self.branches)
 
     def parse_branch_name(self, branch_name):
-      stack_match = self.stacked_branch_name_regex.match(branch_name)
+        stack_match = self.stacked_branch_name_regex.match(branch_name)
 
-      if stack_match:
-        return { "name": stack_match.group(1), "number": int(stack_match.group(2)) }
-      else:
-        raise Exception("Not a stacked branch")
+        if stack_match:
+            return { "name": stack_match.group(1), "number": int(stack_match.group(2)) }
+        else:
+            raise Exception("Not a stacked branch")
 
     def get_branches(self):
-        all_branches = exec_command("git for-each-ref --format '%(refname:short)' refs/heads/").split('\n')
+        all_branches = exec_command("git for-each-ref --format '%(refname:short)' refs/heads/").split("\n")
         branches_of_stack = list(filter(lambda branch: branch.startswith(self.prefix), all_branches))
         return branches_of_stack
 
     def get_higher_branch_number(self, branches):
-        branches_numbers = map(lambda branch: self.parse_branch_name(branch)['number'], branches)
+        branches_numbers = map(lambda branch: self.parse_branch_name(branch)["number"], branches)
         return max(branches_numbers)
 
     def show_status(self):
@@ -46,33 +46,40 @@ class Stack:
             exec_command("git checkout -b " + self.prefix + str(self.stack_top_position + 1))
         else:
             raise Exception("Can only add to stack from the stack top")
-    
+
     def rebase_on_branch_number(self, number):
         subprocess.call(["git", "rebase", "-i", self.prefix + str(number)])
 
 
 def get_current_branch():
-  return exec_command("git branch --show-current").strip()
+    return exec_command("git branch --show-current").strip()
 
 def exec_command(command):
-  output_stream = os.popen(command)
-  output = output_stream.read()
-  output_stream.close()
-  return output.strip('\n')
+    output_stream = os.popen(command)
+    output = output_stream.read()
+    output_stream.close()
+    return output.strip("\n")
 
 def handle_command(args):
     command_handlers = {
-        "checkout": handle_checkout,
-        "status": handle_status,
-        "push": handle_push,
-        "rebase": handle_rebase
-    }
+            "new": handle_new,
+            "checkout": handle_checkout,
+            "status": handle_status,
+            "push": handle_push,
+            "rebase": handle_rebase
+            }
 
     if len(args) != 0 and args[0] in command_handlers:
         command_handler = command_handlers[args[0]]
         command_handler(args[1:])
     else:
         print_help()
+
+def handle_new(args):
+    if len(args) == 1:
+        exec_command("git checkout -b " + args[0] + "-1")
+    else:
+        raise Exception("expected usage is \"new <branch name>\"")
 
 def handle_checkout(args):
     if len(args) == 1:
@@ -108,13 +115,14 @@ def init_stack():
 def print_help():
     print('''Usage: <action> [args]
 Possible actions are:
+    - new                         create a new stack from the current branch
     - status                      list the branches of the stack
     - checkout <branch number>    go to the given branch in the stack
     - push                        add a new branch to the stack
     - rebase <branch number>      rebase the current branch with another
                                   branch of the stack''')
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         handle_command(sys.argv[1:])
     except Exception as err:

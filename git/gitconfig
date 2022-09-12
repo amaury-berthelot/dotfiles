@@ -52,6 +52,7 @@
   lbr = branch --sort=committerdate --verbose
   stack = "!~/.dotfiles/git/stack.py"
   k = "stack"
+  kn = "stack new"
   kc = "stack checkout"
   kp = "stack push"
   ks = "stack status"
