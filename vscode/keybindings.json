@@ -44,22 +44,22 @@
     "command": "-workbench.action.quit"
   },
   {
-    "key": "ctrl+alt+j",
+    "key": "alt+j",
     "command": "workbench.action.terminal.focus",
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+alt+k",
+    "key": "alt+k",
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "terminalFocus"
   },
   {
-    "key": "alt+l",
+    "key": "ctrl+l",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
   },
   {
-    "key": "alt+h",
+    "key": "ctrl+h",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
   },
@@ -69,22 +69,22 @@
     "when": "editorFocus"
   },
   {
-    "key": "alt+l",
+    "key": "ctrl+l",
     "command": "workbench.action.focusNextGroup",
     "when": "editorFocus"
   },
   {
-    "key": "alt+j",
+    "key": "ctrl+j",
     "command": "workbench.action.focusBelowGroup",
     "when": "editorFocus"
   },
   {
-    "key": "alt+k",
+    "key": "ctrl+k",
     "command": "workbench.action.focusAboveGroup",
     "when": "editorFocus"
   },
   {
-    "key": "alt+h",
+    "key": "ctrl+h",
     "command": "workbench.action.focusPreviousGroup",
     "when": "editorFocus"
   },
@@ -123,22 +123,22 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "alt+h",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "alt+h",
     "command": "workbench.action.previousEditor",
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+alt+l",
+    "key": "alt+l",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+alt+l",
+    "key": "alt+l",
     "command": "workbench.action.nextEditor",
     "when": "editorFocus"
   },
