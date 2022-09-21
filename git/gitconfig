@@ -50,6 +50,7 @@
   sm = submodule
   ignore = update-index --assume-unchanged
   lbr = branch --sort=committerdate --verbose
+  ri = rebase -i --autosquash
   stack = "!~/.dotfiles/git/stack.py"
   k = "stack"
   kn = "stack new"

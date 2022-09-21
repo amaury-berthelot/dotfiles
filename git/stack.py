@@ -48,7 +48,7 @@ class Stack:
             raise Exception("Can only add to stack from the stack top")
 
     def rebase_on_branch_number(self, number):
-        subprocess.call(["git", "rebase", "-i", self.prefix + str(number)])
+        subprocess.call(["git", "rebase", "-i", "origin/" + self.prefix + str(number)])
 
 
 def get_current_branch():
