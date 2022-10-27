@@ -1,14 +1,15 @@
 general {
   colors = false
-  interval = 5
+  interval = 1
+  output_format = "i3bar"
 }
 
-order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
 order += "load"
+order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "memory"
 order += "tztime local"
@@ -19,7 +20,7 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-  format_up = "E: %ip (%speed)"
+  format_up = "E: %ip"
   format_down = "E: down"
 }
 
@@ -39,13 +40,17 @@ cpu_usage {
   format = "CPU: %usage"
 }
 
+cpu_temperature 0 {
+  format = "T: %degrees°C"
+}
+
 memory {
-  format = "Mem: %percentage_used %used|%available/%total"
+  format = "Mem: %percentage_used (%available)"
   threshold_degraded = "1G"
   format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-  format = "%Y-%m-%d %H:%M:%S"
+  format = "%Y-%m-%d %H:%M:%S  "
 }
 
