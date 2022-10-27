@@ -4,11 +4,17 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/asi/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+if [[ -d $HOME/bin ]]; then
+  PATH=$PATH:$HOME/bin
+fi
+
+if [[ -d $HOME/.local/bin ]]; then
+  PATH=$PATH:$HOME/.local/bin
+fi
 
 source ~/.dotfiles/zsh/lib/git-prompt.sh
 setopt PROMPT_SUBST ; PS1='[%~$(__git_ps1 " (%s)")] \$ '
