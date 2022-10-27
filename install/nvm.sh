@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION=0.39.1
-INSTALL_PATH=$HOME/.local/apps/nvm
+INSTALL_PATH=$HOME/.shared/nvm
 SHELL_CONFIG_FILE=$HOME/.dotfiles/local/zsh/zshrc
 
 rm -rf $INSTALL_PATH/$VERSION
