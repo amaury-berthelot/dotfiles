@@ -4,7 +4,7 @@ CONFIGS_FOLDER=$HOME/.dotfiles
 
 function create_folder_if_not_exists {
   if [[ ! -d $1 ]] && [[ ! -f $1 ]]; then
-    mkdir $1
+    mkdir -p $1
   fi
 }
 
