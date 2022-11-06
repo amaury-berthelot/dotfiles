@@ -15,9 +15,3 @@ RUN apt install -y \
   universal-ctags \
   wget \
   curl
-
-RUN useradd -m -s /bin/zsh -d /home/dev dev
-RUN chown -R dev /home/dev
-
-WORKDIR /home/dev
-USER dev

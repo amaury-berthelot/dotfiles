@@ -10,7 +10,6 @@ RUN apt install -y \
   zsh \
   fzf \
   git \
-  neovim \
   ripgrep \
   tmux \
   universal-ctags \
