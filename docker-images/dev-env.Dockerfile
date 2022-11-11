@@ -1,23 +1,17 @@
-FROM ubuntu:latest
-
-ARG DEBIAN_FRONTEND=noninteractive
-
-RUN echo "Europe/Paris" > /etc/timezone
-
-RUN apt update && apt upgrade -y
-RUN apt install -y \
-  gcc \
-  zsh \
-  fzf \
-  git \
-  ripgrep \
-  tmux \
-  universal-ctags \
-  wget \
-  curl
+FROM localhost/images/base
 
 RUN useradd -m -s /bin/zsh -d /home/dev dev
+
+ADD . /home/dev/configs
+RUN ln -s /home/dev/configs /home/dev/.dotfiles
+
 RUN chown -R dev /home/dev
 
 WORKDIR /home/dev
 USER dev
+
+RUN ./configs/init.sh
+RUN ./configs/setup.sh
+
+RUN /home/dev/configs/install/nvm.sh
+RUN /home/dev/configs/install/neovim.sh
