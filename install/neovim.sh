@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 VERSION=0.8.0
-INSTALL_PATH=$HOME/.shared/neovim
+INSTALL_PATH=$HOME/.local/apps/neovim
 
 if [[ ! -d $INSTALL_PATH/$VERSION ]]; then
   mkdir -p $INSTALL_PATH/$VERSION
@@ -15,5 +15,9 @@ if [[ ! -d $INSTALL_PATH/$VERSION ]]; then
   chmod u+x $INSTALL_PATH/current/bin/nvim
 fi
 
-rm -f $HOME/bin/nvim
-ln -s $INSTALL_PATH/current/bin/nvim $HOME/bin/nvim
+if [[ ! -d $HOME/.local/bin ]]; then
+  mkdir $HOME/.local/bin
+fi
+
+rm -f $HOME/.local/bin/nvim
+ln -s $INSTALL_PATH/current/bin/nvim $HOME/.local/bin/nvim

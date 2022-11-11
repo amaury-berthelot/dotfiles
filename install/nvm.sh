@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION=0.39.1
-INSTALL_PATH=$HOME/.shared/nvm
+INSTALL_PATH=$HOME/.local/apps/nvm
 SHELL_CONFIG_FILE=$HOME/.dotfiles/local/zsh/zshrc
 
 if [[ ! -d $INSTALL_PATH/$VERSION ]]; then
