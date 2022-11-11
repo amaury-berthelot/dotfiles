@@ -53,5 +53,10 @@
     "id": "go",
     "active": false,
     "description": "Enable plugins for Go language"
+  },
+  {
+    "id": "notes",
+    "active": false,
+    "description": "Enable configs for note taking"
   }
 ]

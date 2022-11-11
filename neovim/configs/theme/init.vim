@@ -1,1 +1,3 @@
-colorscheme dracula
+"colorscheme dracula
+set background=light
+colorscheme zellner
