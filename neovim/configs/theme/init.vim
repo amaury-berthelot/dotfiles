@@ -1,3 +1,2 @@
-"colorscheme dracula
 set background=light
-colorscheme zellner
+colorscheme one

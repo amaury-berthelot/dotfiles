@@ -1,1 +1,1 @@
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'rakr/vim-one'
