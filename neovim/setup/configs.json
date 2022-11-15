@@ -30,6 +30,11 @@
     "description": "Enable find with fuzzy search"
   },
   {
+    "id": "comments",
+    "active": false,
+    "description": "Easier commenting"
+  },
+  {
     "id": "git",
     "active": false,
     "description": "Enable Git integration"
@@ -38,6 +43,11 @@
     "id": "language-servers",
     "active": false,
     "description": "Enable language servers"
+  },
+  {
+    "id": "tags",
+    "active": false,
+    "description": "Enable tags bar"
   },
   {
     "id": "debug",
