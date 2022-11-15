@@ -39,12 +39,6 @@
   "gitlens.showWhatsNewAfterUpgrades": false,
   "html.format.endWithNewline": true,
   "html.format.wrapAttributes": "aligned-multiple",
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "js/ts.implicitProjectConfig.checkJs": true,
@@ -84,8 +78,7 @@
   "window.newWindowDimensions": "inherit",
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}",
-  "workbench.activityBar.visible": false,
-	"workbench.colorTheme": "GitHub Dark",
+	"workbench.colorTheme": "GitHub Light",
   "workbench.editor.wrapTabs": true,
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
@@ -480,5 +473,8 @@
       "level": "on"
     }
   },
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true
 }
