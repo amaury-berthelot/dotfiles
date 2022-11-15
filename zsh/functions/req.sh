@@ -15,6 +15,7 @@ function ,req {
   elif [[ $1 == "result" ]] || [[ $1 == "res" ]] || [[ $1 == "r" ]]; then
     eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json;
   else
+    cp requests/$request requests/last
     python3 ~/.dotfiles/scripts/req.py $@ $request;
   fi
 

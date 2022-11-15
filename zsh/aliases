@@ -3,8 +3,14 @@ alias la="ls -lah"
 alias port="ss -tulpn | grep $1"
 
 alias g="git"
+
 alias n="npm"
 alias nr="npm run"
+alias pn="pnpm"
+alias pnr="pnpm run"
+
+alias d="docker"
+alias dc="docker-compose"
 
 mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
 
