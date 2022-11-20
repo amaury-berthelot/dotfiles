@@ -12,6 +12,10 @@ alias pnr="pnpm run"
 alias d="docker"
 alias dc="docker-compose"
 
+alias nv="nvim"
+
+alias tmux="TERM=xterm-256color tmux"
+
 mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
 
 tarenc() { tar -cz $1 | openssl aes-256-cbc -e -out $1.enc; }
