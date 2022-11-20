@@ -19,8 +19,10 @@ function ,jump() {
     else
       echo "no jump locations"
     fi
+  elif [[ $# -eq 2 ]] && [[ $1 == "add" ]]; then
+    echo "local $2=$(pwd)" >> $DATA_PATH
   else
-    echo "jump <path>"
+    echo "jump [add] <path>"
   fi
 }
 
