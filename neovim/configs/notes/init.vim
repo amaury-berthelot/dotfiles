@@ -11,3 +11,4 @@ inoremap <expr> <C-x><C-w> fzf#vim#complete(fzf#wrap({
 
 command Fr :setlocal spelllang=fr
 command En :setlocal spelllang=en
+command Z execute "e \`openssl rand -hex 4\`.md"
