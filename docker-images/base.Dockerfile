@@ -14,4 +14,6 @@ RUN apt install -y \
   tmux \
   universal-ctags \
   wget \
-  curl
+  curl \
+  python3 \
+  xclip
