@@ -8,11 +8,31 @@ function ,req {
 
   cd $DATA_DIR
 
-  local request=$(find requests -type f | cut -d'/' -f2- | fzf);
-
+  local is_edition=false
   if [[ $1 == "edit" ]] || [[ $1 == "e" ]]; then
+    is_edition=true
+  fi
+
+  local is_variable_edition=false
+  if [[ $1 == "variables" ]] || [[ $1 == "var" ]] || [[ $1 == "v" ]]; then
+    is_variable_edition=true
+  fi
+
+  local is_result_display=false
+  if [[ $1 == "result" ]] || [[ $1 == "res" ]] || [[ $1 == "r" ]]; then
+    is_result_display=true
+  fi
+
+  local request=""
+  if [[ $is_variable_edition == false ]]; then
+    request=$(find requests -type f | cut -d'/' -f2- | fzf);
+  fi
+
+  if $is_edition; then
     vim requests/$request;
-  elif [[ $1 == "result" ]] || [[ $1 == "res" ]] || [[ $1 == "r" ]]; then
+  elif $is_variable_edition; then
+    vim $DATA_DIR/variables.json
+  elif $is_result_display; then
     eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json;
   else
     cp requests/$request requests/last
