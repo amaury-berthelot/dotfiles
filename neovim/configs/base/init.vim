@@ -20,6 +20,7 @@ set wildignore=*.jpg,*.jpeg,*.png,*.pdf
 set wildmenu
 set wildmode=list:longest
 set foldmethod=indent
+set termguicolors
 
 filetype on
 filetype plugin on
