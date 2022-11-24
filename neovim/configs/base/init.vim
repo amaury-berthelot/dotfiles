@@ -19,6 +19,7 @@ set tabstop=2
 set wildignore=*.jpg,*.jpeg,*.png,*.pdf
 set wildmenu
 set wildmode=list:longest
+set foldmethod=indent
 
 filetype on
 filetype plugin on
