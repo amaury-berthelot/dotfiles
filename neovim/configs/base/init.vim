@@ -21,6 +21,7 @@ set wildmenu
 set wildmode=list:longest
 set foldmethod=indent
 set termguicolors
+set relativenumber
 
 filetype on
 filetype plugin on
