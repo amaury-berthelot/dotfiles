@@ -6,6 +6,7 @@ mkdir -p $HOME/.devenv/apps
 mkdir -p $HOME/.devenv/share
 
 docker run --rm -it \
+  --network host \
   -v $HOME/.dotfiles:/home/dev/configs \
   -v $HOME/.devenv:/home/dev/.local \
   -v $(pwd):/home/dev/workspace \
