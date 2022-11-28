@@ -12,6 +12,3 @@ USER dev
 
 RUN ./configs/init.sh
 RUN ./configs/setup.sh
-
-RUN /home/dev/configs/install/nvm.sh
-RUN /home/dev/configs/install/neovim.sh
