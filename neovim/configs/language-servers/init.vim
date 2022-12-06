@@ -46,3 +46,5 @@ require('lspconfig')['pyright'].setup{
   flags = lsp_flags,
 }
 EOF
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif

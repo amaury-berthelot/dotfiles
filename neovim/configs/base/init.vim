@@ -42,6 +42,7 @@ nnoremap <C-down> <C-w>-
 nnoremap <C-left> <C-w><
 
 inoremap jj <esc>
+inoremap jk <esc>
 
 " write
 nnoremap <leader>w :w<CR>
