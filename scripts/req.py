@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
+import base64
 import http.client
 import json
-import re
 import os
+import re
 import sys
 
 class RequestExecutionContext:
@@ -68,6 +69,7 @@ class RequestExecutionContext:
 
         for variable_definition in variables:
             variable = self.parse_variable_definition(variable_definition)
+            print(variable)
 
             if "var" in variable:
                 variable_value = self.get_variable_value(variable["var"])
@@ -75,11 +77,13 @@ class RequestExecutionContext:
             elif "res" in variable and variable["res"] in self.responses:
                 request_result_body = self.responses[variable["res"]]["body"]
                 result = result.replace("{{" + variable_definition + "}}", request_result_body)
+            elif "base64" in variable:
+                result = result.replace("{{" + variable_definition + "}}", base64.b64encode(variable["base64"].encode('utf-8')).decode('utf-8'))
 
         return result
 
     def parse_variable_definition(self, variable_definition):
-        variable_parts = re.findall("([^}\s]+):([^}\s]+)", variable_definition);
+        variable_parts = re.findall("([^}\s]+?):([^},]+)", variable_definition);
         result = {}
 
         for variable_part in variable_parts:
