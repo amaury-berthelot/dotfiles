@@ -51,6 +51,7 @@
   ignore = update-index --assume-unchanged
   lbr = branch --sort=committerdate --verbose
   ri = rebase -i --autosquash
+  rc = rebase --continue
   wt = worktree
   wtl = worktree list
   wta = worktree add
