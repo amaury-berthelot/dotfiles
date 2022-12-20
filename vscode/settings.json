@@ -60,7 +60,8 @@
   "update.showReleaseNotes": false,
   "vetur.completion.tagCasing": "initial",
   "vim.insertModeKeyBindings": [
-    { "before": ["j", "j"], "after": ["<Esc>"] }
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["j", "k"], "after": ["<Esc>"] }
   ],
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
