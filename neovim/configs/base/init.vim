@@ -6,6 +6,7 @@ set incsearch
 set nobackup
 set nocompatible
 set number
+set wrap
 set scrolloff=10
 set shiftwidth=2
 set shiftwidth=2
