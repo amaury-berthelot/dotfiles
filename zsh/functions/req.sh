@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+EDITOR=nvim
+
 function ,req {
   if [[ -z ${DATA_DIR} ]]; then
     echo "DATA_DIR is not defined"
@@ -29,9 +31,9 @@ function ,req {
   fi
 
   if $is_edition; then
-    vim requests/$request;
+    $EDITOR requests/$request;
   elif $is_variable_edition; then
-    vim $DATA_DIR/variables.json
+    $EDITOR $DATA_DIR/variables.json
   elif $is_result_display; then
     eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json;
   else
