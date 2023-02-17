@@ -236,5 +236,24 @@
   {
     "key": "shift+alt+s d",
     "command": "editor.action.sortLinesDescending"
+  },
+  {
+    "key": "ctrl+k f",
+    "command": "-workbench.action.closeFolder",
+    "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+  },
+  {
+    "key": "ctrl+k f",
+    "command": "editor.foldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+0",
+    "command": "-editor.foldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "alt+o",
+    "command": "outline.focus"
   }
 ]
