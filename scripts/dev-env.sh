@@ -10,6 +10,7 @@ docker run --rm -it \
   -v $HOME/.dotfiles:/home/dev/configs \
   -v $HOME/.devenv:/home/dev/.local \
   -v $(pwd):/home/dev/workspace \
+  -v $(pwd):$(pwd) \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY \
   localhost/images/dev-env \
