@@ -73,6 +73,7 @@
   bralias = "!f() { git symbolic-ref refs/heads/$1 refs/heads/$2; }; f"
   tidyup = "!git branch -v | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch -D"
   clonewt = "!f() { local name=$(echo $1 | awk -F '/' '{print $3}' | awk -F '.' '{print $1}'); mkdir $name && git clone $1 $name/master; }; f"
+  cmfl = "!f() { git commit --fixup $(git log --oneline | fzf | cut -d' ' -f 1); }; f"
 
 [include]
   path = ~/.dotfiles/local/git/gitconfig
