@@ -12,27 +12,30 @@ function ,jump() {
       source $DATA_PATH
       local target="${(P)1}"
 
-      if [[ $target != "" ]]; then
+      if [[ -f $HISTORY_PATH ]] && [[ $1 == '$' ]]; then
+        ,clear_env
+        cd $(cat $HISTORY_PATH | sort | uniq | fzf)
+        ,env
+      elif [[ $target != "" ]]; then
+        ,clear_env
         cd $target
         ,env
-      elif [[ -d $1 ]]; then
+      else
+        ,clear_env
         cd $1
         pwd >> $HISTORY_PATH
         cat $HISTORY_PATH | sort | uniq > $HISTORY_PATH
         ,env
-      else
-        echo "cannot jump"
       fi
     else
       echo "no jump locations"
     fi
-  elif [[ -f $HISTORY_PATH ]] && [[ $# -eq 0 ]]; then
-    cd $(cat $HISTORY_PATH | sort | uniq | fzf)
-    ,env
   elif [[ $# -eq 2 ]] && [[ $1 == "add" ]]; then
     echo "local $2=$(pwd)" >> $DATA_PATH
   else
-    echo "jump [add] <path>"
+    ,clear_env
+    cd
+    ,env
   fi
 }
 
