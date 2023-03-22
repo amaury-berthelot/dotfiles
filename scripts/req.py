@@ -65,11 +65,10 @@ class RequestExecutionContext:
 
     def replace_variables(self, text):
         result = text
-        variables = set(re.findall("{{(.+)}}", text))
+        variables = set(re.findall("{{(.+?)}}", text))
 
         for variable_definition in variables:
             variable = self.parse_variable_definition(variable_definition)
-            print(variable)
 
             if "var" in variable:
                 variable_value = self.get_variable_value(variable["var"])
@@ -104,24 +103,20 @@ class RequestExecutionContext:
         request = { "headers": {} }
 
         blocks = request_definition.split("\n\n")
+        header = blocks[0].strip()
+        header_lines = header.split("\n")
 
-        host_parts = re.match("(http|https)://(\S+)", blocks[0])
-        request["protocol"] = host_parts[1]
-        request["host"] = host_parts[2]
-
-        header = blocks[1].strip()
-        if len(blocks) > 2:
-            request["payload"] = blocks[2].strip()
+        header_parts = re.match("(.+?) (http|https)://(\S+?)(/.*)$", header_lines[0])
+        request["method"] = header_parts[1]
+        request["protocol"] = header_parts[2]
+        request["host"] = header_parts[3]
+        request["path"] = header_parts[4]
+        if len(blocks) > 1:
+            request["payload"] = blocks[1].strip()
         else:
             request["payload"] = ""
 
-        header_lines = header.split("\n")
-        endpoint = header_lines[0]
         raw_headers = header_lines[1:]
-
-        endpoint_parts = endpoint.split(" ")
-        request["method"] = endpoint_parts[0]
-        request["path"] = endpoint_parts[1]
 
         for raw_header in raw_headers:
             raw_header_parts = raw_header.split(":")
