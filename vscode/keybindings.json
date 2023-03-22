@@ -255,5 +255,17 @@
   {
     "key": "alt+o",
     "command": "outline.focus"
+  },
+  {
+    "key": "alt+v t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "alt+v a",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "alt+v s",
+    "command": "workbench.action.toggleSidebarVisibility"
   }
 ]
