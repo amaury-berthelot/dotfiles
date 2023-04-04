@@ -22,6 +22,7 @@ class RequestExecutionContext:
 
     def exec_request(self, request_name):
         request_definition = self.replace_variables(self.get_file_content(request_name))
+
         request = self.parse_http_request(request_definition)
 
         if request["protocol"] == "http":
@@ -65,7 +66,10 @@ class RequestExecutionContext:
 
     def replace_variables(self, text):
         result = text
-        variables = set(re.findall("{{(.+?)}}", text))
+        variables = set(re.findall("{{([^{}]+?)}}", text))
+
+        if len(variables) == 0:
+            return text
 
         for variable_definition in variables:
             variable = self.parse_variable_definition(variable_definition)
@@ -73,13 +77,16 @@ class RequestExecutionContext:
             if "var" in variable:
                 variable_value = self.get_variable_value(variable["var"])
                 result = result.replace("{{" + variable_definition + "}}", variable_value)
-            elif "res" in variable and variable["res"] in self.responses:
-                request_result_body = self.responses[variable["res"]]["body"]
-                result = result.replace("{{" + variable_definition + "}}", request_result_body)
+            elif "res" in variable :
+                if variable["res"] in self.responses:
+                    request_result_body = self.responses[variable["res"]]["body"]
+                    result = result.replace("{{" + variable_definition + "}}", request_result_body)
+                else:
+                    result = result.replace("{{" + variable_definition + "}}", "")
             elif "base64" in variable:
                 result = result.replace("{{" + variable_definition + "}}", base64.b64encode(variable["base64"].encode('utf-8')).decode('utf-8'))
 
-        return result
+        return self.replace_variables(result)
 
     def parse_variable_definition(self, variable_definition):
         variable_parts = re.findall("([^}\s]+?):([^},]+)", variable_definition);
