@@ -20,5 +20,5 @@ alias nv="nvim"
 
 alias tmux="TERM=xterm-256color tmux"
 
-tarenc() { tar -cz $1 | openssl aes-256-cbc -e -out $1.enc; }
+tarenc() { tar --exclude ".git" -cz $1 | openssl aes-256-cbc -e -out $1.enc; }
 tardec() { openssl aes-256-cbc -d -in $1 | tar -xz; }

@@ -19,6 +19,11 @@ function ,jump() {
     shift
   fi
 
+  if [[ $1 == "-" ]]; then
+    cd -
+    return
+  fi
+
   if [[ -f $DATA_PATH ]]; then
     source $DATA_PATH
   fi
