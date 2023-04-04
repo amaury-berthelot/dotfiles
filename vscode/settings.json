@@ -79,6 +79,7 @@
     { "before": ["<leader>", "s", "l"], "commands": ["workbench.action.focusNextGroup"] },
     { "before": ["<leader>", "t", "h"], "commands": ["workbench.action.previousEditor"] },
     { "before": ["<leader>", "t", "l"], "commands": ["workbench.action.nextEditor"] }
+    { "before": ["z", "A"], "commands": ["editor.unfoldRecursively"] }
   ],
   "vim.useSystemClipboard": false,
   "window.menuBarVisibility": "classic",
@@ -485,5 +486,8 @@
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "vim.foldfix": true,
+  "mdb.sendTelemetry": false,
+  "gitlens.telemetry.enabled": false,
+  "rest-client.enableTelemetry": false,
   "workbench.activityBar.visible": false
 }
