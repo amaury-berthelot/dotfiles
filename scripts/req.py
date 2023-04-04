@@ -21,7 +21,7 @@ class RequestExecutionContext:
         self.responses = json.loads(self.get_file_content("responses.json"))
 
     def exec_request(self, request_name):
-        request_definition = self.replace_variables(self.get_file_content("requests/" + request_name))
+        request_definition = self.replace_variables(self.get_file_content(request_name))
         request = self.parse_http_request(request_definition)
 
         if request["protocol"] == "http":
