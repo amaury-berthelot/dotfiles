@@ -267,5 +267,24 @@
   {
     "key": "alt+v s",
     "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "f10",
+    "command": "-workbench.actions.menubar.focus",
+    "when": "isWeb"
+  },
+  {
+    "key": "f10",
+    "command": "workbench.action.debug.stepOver",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "alt+f10",
+    "command": "-workbench.action.debug.stepOver",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "alt+q",
+    "command": "revealInExplorer"
   }
 ]
