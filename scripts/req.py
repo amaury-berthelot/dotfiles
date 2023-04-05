@@ -78,8 +78,8 @@ class RequestExecutionContext:
                 variable_value = self.get_variable_value(variable["var"])
                 result = result.replace("{{" + variable_definition + "}}", variable_value)
             elif "res" in variable :
-                if variable["res"] in self.responses:
-                    request_result_body = self.responses[variable["res"]]["body"]
+                if "requests/" + variable["res"] in self.responses:
+                    request_result_body = self.responses["requests/" + variable["res"]]["body"]
                     result = result.replace("{{" + variable_definition + "}}", request_result_body)
                 else:
                     result = result.replace("{{" + variable_definition + "}}", "")
