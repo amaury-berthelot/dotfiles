@@ -13,6 +13,7 @@ function ,req {
   local is_edition=false
   local is_variable_edition=false
   local is_result_display=false
+  local is_json_result=false
   if [[ $1 == "edit" ]] || [[ $1 == "e" ]]; then
     is_edition=true
     shift
@@ -21,6 +22,10 @@ function ,req {
     shift
   elif [[ $1 == "result" ]] || [[ $1 == "res" ]] || [[ $1 == "r" ]]; then
     is_result_display=true
+    shift
+  elif [[ $1 == "resultjson" ]] || [[ $1 == "resjson" ]] || [[ $1 == "rj" ]]; then
+    is_result_display=true
+    is_json_result=true
     shift
   fi
 
@@ -36,7 +41,11 @@ function ,req {
   elif $is_variable_edition; then
     $EDITOR $DATA_DIR/variables.json
   elif $is_result_display; then
-    eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json;
+    if $is_json_result; then
+      eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json | jq '. | fromjson';
+    else
+      eval jq "'.[\"$request\"].body'" $DATA_DIR/responses.json;
+    fi
   else
     cp $request $DATA_DIR/requests/last
     python3 ~/.dotfiles/scripts/req.py $request
