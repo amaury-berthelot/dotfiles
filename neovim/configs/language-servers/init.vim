@@ -45,6 +45,12 @@ require('lspconfig')['pyright'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+-- https://www.npmjs.com/package/svelte-language-server
+require('lspconfig')['svelte'].setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
 EOF
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
