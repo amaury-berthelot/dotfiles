@@ -3,5 +3,7 @@ Session.vim
 tags
 
 .ztr-directory
+.pnpm-store
 
 .env.sh
+.secret
