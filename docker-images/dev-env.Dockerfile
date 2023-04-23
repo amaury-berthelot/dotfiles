@@ -12,3 +12,11 @@ USER dev
 
 RUN ./configs/init.sh
 RUN ./configs/setup.sh
+
+USER root
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt update
+RUN apt install -y \
+  php8.1 \
+  php-sqlite3
+USER dev
