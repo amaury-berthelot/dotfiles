@@ -486,8 +486,6 @@
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "vim.foldfix": true,
-  "mdb.sendTelemetry": false,
   "gitlens.telemetry.enabled": false,
-  "rest-client.enableTelemetry": false,
   "workbench.activityBar.visible": false
 }

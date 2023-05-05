@@ -286,5 +286,10 @@
   {
     "key": "alt+q",
     "command": "revealInExplorer"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   }
 ]
