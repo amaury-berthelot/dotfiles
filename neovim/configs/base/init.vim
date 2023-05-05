@@ -50,7 +50,7 @@ nnoremap <leader>w :w<CR>
 " close
 nnoremap <leader>q :q<CR>
 " close and delete buffer
-nnoremap <leader>Q :bd<CR>
+nnoremap <leader>Q :bd!<CR>
 
 " native explorer
 let g:netrw_keepdir=0
