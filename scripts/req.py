@@ -27,11 +27,11 @@ class RequestExecutionContext:
 
         if request["protocol"] == "http":
             conn = http.client.HTTPConnection(request["host"])
-            conn.request(request["method"],request["path"], request["payload"], request["headers"])
+            conn.request(request["method"],request["path"], request["payload"].encode("utf-8"), request["headers"])
             res = conn.getresponse()
         else:
             conn = http.client.HTTPSConnection(request["host"])
-            conn.request(request["method"],request["path"], request["payload"], request["headers"])
+            conn.request(request["method"],request["path"], request["payload"].encode("utf-8"), request["headers"])
             res = conn.getresponse()
 
         data = res.read()
