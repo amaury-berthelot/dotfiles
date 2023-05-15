@@ -89,6 +89,10 @@ nnoremap <leader>tl :tabnext<CR>
 nnoremap <leader>tL :tabprevious<CR>
 " " go to previous
 nnoremap <leader>th :tabprevious<CR>
+" " move tab left
+nnoremap <leader>tmh :-tabmove<CR>
+" " move tab right
+nnoremap <leader>tml :+tabmove<CR>
 
 " navigation
 " " open file in horizontal split
@@ -101,3 +105,6 @@ nnoremap <leader>gft <C-w>gf
 nnoremap <leader>gfh gf
 " " go to tag definition
 nnoremap <leader>gtd <C-]>
+
+" save session
+command Mks mks!
