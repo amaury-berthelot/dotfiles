@@ -1,8 +1,5 @@
 {
   "breadcrumbs.enabled": true,
-  "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-chrome": "custom"
-  },
   "debug.openDebug": "neverOpen",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -37,8 +34,6 @@
   "gitlens.currentLine.pullRequests.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
-  "html.format.endWithNewline": true,
-  "html.format.wrapAttributes": "aligned-multiple",
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "js/ts.implicitProjectConfig.checkJs": true,
@@ -48,8 +43,6 @@
   "scss.lint.duplicateProperties": "warning",
   "search.quickOpen.includeHistory": false,
   "sonarlint.disableTelemetry": true,
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
   "telemetry.telemetryLevel": "off",
   "typescript.check.npmIsInstalled": false,
   "typescript.disableAutomaticTypeAcquisition": true,
@@ -58,7 +51,6 @@
   "typescript.updateImportsOnFileMove.enabled": "never",
   "update.mode": "none",
   "update.showReleaseNotes": false,
-  "vetur.completion.tagCasing": "initial",
   "vim.insertModeKeyBindings": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
     { "before": ["j", "k"], "after": ["<Esc>"] }
