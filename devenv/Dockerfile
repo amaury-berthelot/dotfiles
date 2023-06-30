@@ -41,6 +41,13 @@ RUN git clone https://github.com/amaury-berthelot/dotfiles.git configs
 RUN ln -s /home/dev/configs /home/dev/.dotfiles
 RUN chown -R dev /home/dev
 
+# TODO: move these apt install up (added there for now to avoid a full rebuild)
+RUN apt install -y openjdk-19-jre
+RUN apt update
+RUN apt install -y meld
+
 USER dev
 RUN ./configs/init.sh
 RUN ./configs/setup.sh
+
+ENV JAVA_HOME=/usr/lib/jvm/java-19-openjdk-amd64
