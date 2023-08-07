@@ -118,18 +118,28 @@ class RequestExecutionContext:
         request["protocol"] = header_parts[2]
         request["host"] = header_parts[3]
         request["path"] = header_parts[4]
-        if len(blocks) > 1:
-            request["payload"] = blocks[1].strip()
-        else:
-            request["payload"] = ""
 
-        raw_headers = header_lines[1:]
+        header_lines = header_lines[1:]
 
-        for raw_header in raw_headers:
+        while True:
+            is_query_param = re.match("\s*[?&]", header_lines[0])
+
+            if is_query_param != None:
+                request["path"] = request["path"] + header_lines[0].strip()
+                header_lines = header_lines[1:]
+            else:
+                break
+
+        for raw_header in header_lines:
             raw_header_parts = raw_header.split(":")
             header_name = raw_header_parts[0].strip()
             header_value = raw_header_parts[1].strip()
             request["headers"][header_name] = header_value
+
+        if len(blocks) > 1:
+            request["payload"] = blocks[1].strip()
+        else:
+            request["payload"] = ""
 
         return request
 
