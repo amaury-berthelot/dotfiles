@@ -1,6 +1,10 @@
 {
   "breadcrumbs.enabled": true,
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-chrome": "custom"
+  },
   "debug.openDebug": "neverOpen",
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -34,6 +38,12 @@
   "gitlens.currentLine.pullRequests.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.telemetry.enabled": false,
+  "html.format.endWithNewline": true,
+  "html.format.wrapAttributes": "aligned-multiple",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "js/ts.implicitProjectConfig.checkJs": true,
@@ -43,6 +53,8 @@
   "scss.lint.duplicateProperties": "warning",
   "search.quickOpen.includeHistory": false,
   "sonarlint.disableTelemetry": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
   "telemetry.telemetryLevel": "off",
   "typescript.check.npmIsInstalled": false,
   "typescript.disableAutomaticTypeAcquisition": true,
@@ -51,6 +63,7 @@
   "typescript.updateImportsOnFileMove.enabled": "never",
   "update.mode": "none",
   "update.showReleaseNotes": false,
+  "vetur.completion.tagCasing": "initial",
   "vim.insertModeKeyBindings": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
     { "before": ["j", "k"], "after": ["<Esc>"] }
@@ -71,13 +84,17 @@
     { "before": ["<leader>", "s", "l"], "commands": ["workbench.action.focusNextGroup"] },
     { "before": ["<leader>", "t", "h"], "commands": ["workbench.action.previousEditor"] },
     { "before": ["<leader>", "t", "l"], "commands": ["workbench.action.nextEditor"] }
+    { "before": ["<leader>", "t", "m", "h"], "commands": ["workbench.action.moveEditorLeftInGroup"] },
+    { "before": ["<leader>", "t", "m", "l"], "commands": ["workbench.action.moveEditorRightInGroup"] },
     { "before": ["z", "A"], "commands": ["editor.unfoldRecursively"] }
   ],
+  "vim.foldfix": true,
   "vim.useSystemClipboard": false,
   "window.menuBarVisibility": "classic",
   "window.newWindowDimensions": "inherit",
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}",
+  "workbench.activityBar.visible": false,
 	"workbench.colorTheme": "GitHub Light",
   "workbench.editor.wrapTabs": true,
   "workbench.enableExperiments": false,
@@ -473,11 +490,14 @@
       "level": "on"
     }
   },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "vim.foldfix": true,
-  "gitlens.telemetry.enabled": false,
-  "workbench.activityBar.visible": false
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  }
 }
