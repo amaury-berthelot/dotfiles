@@ -27,11 +27,6 @@ RUN apt install -y \
   sudo \
   libssl1.1 # at least for mongo-in-memory
 
-# install VSCodium
-RUN curl -o /tmp/vscodium.deb -L https://github.com/VSCodium/vscodium/releases/download/1.78.2.23132/codium_1.78.2.23132_amd64.deb
-RUN apt install -y /tmp/vscodium.deb
-RUN rm /tmp/vscodium.deb
-
 RUN useradd -m -s /bin/zsh -d /home/dev -p "$1$k4WVNBSF$c6iagkQbXHQnIHgNU6A381" dev
 WORKDIR /home/dev
 
@@ -42,9 +37,17 @@ RUN ln -s /home/dev/configs /home/dev/.dotfiles
 RUN chown -R dev /home/dev
 
 # TODO: move these apt install up (added there for now to avoid a full rebuild)
-RUN apt install -y openjdk-19-jre
-RUN apt update
-RUN apt install -y meld
+RUN apt install -y openjdk-19-jre unzip
+
+# install VSCodium
+RUN curl -o /tmp/vscodium.deb -L https://github.com/VSCodium/vscodium/releases/download/1.80.1.23194/codium_1.80.1.23194_amd64.deb
+RUN apt install -y /tmp/vscodium.deb
+RUN rm /tmp/vscodium.deb
+
+# install Insomnia
+RUN curl -o /tmp/insomnia.deb -L https://github.com/Kong/insomnia/releases/download/core%402023.4.0/Insomnia.Core-2023.4.0.deb
+RUN apt install -y /tmp/insomnia.deb
+RUN rm /tmp/insomnia.deb
 
 USER dev
 RUN ./configs/init.sh
