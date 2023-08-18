@@ -39,15 +39,15 @@ RUN chown -R dev /home/dev
 # TODO: move these apt install up (added there for now to avoid a full rebuild)
 RUN apt install -y openjdk-19-jre unzip
 
-# install VSCodium
-RUN curl -o /tmp/vscodium.deb -L https://github.com/VSCodium/vscodium/releases/download/1.80.1.23194/codium_1.80.1.23194_amd64.deb
-RUN apt install -y /tmp/vscodium.deb
-RUN rm /tmp/vscodium.deb
-
 # install Insomnia
 RUN curl -o /tmp/insomnia.deb -L https://github.com/Kong/insomnia/releases/download/core%402023.4.0/Insomnia.Core-2023.4.0.deb
 RUN apt install -y /tmp/insomnia.deb
 RUN rm /tmp/insomnia.deb
+
+# install VSCodium
+RUN curl -o /tmp/vscodium.deb -L https://github.com/VSCodium/vscodium/releases/download/1.81.1.23222/codium_1.81.1.23222_amd64.deb
+RUN apt install -y /tmp/vscodium.deb
+RUN rm /tmp/vscodium.deb
 
 USER dev
 RUN ./configs/init.sh
