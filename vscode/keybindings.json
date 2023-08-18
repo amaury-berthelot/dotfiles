@@ -291,5 +291,13 @@
     "key": "ctrl+shift+v",
     "command": "-markdown.showPreview",
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+v d",
+    "command": "workbench.panel.repl.view.focus"
+  },
+  {
+    "key": "alt+v c",
+    "command": "terminal.focus"
   }
 ]

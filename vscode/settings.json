@@ -24,7 +24,6 @@
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "deepIndent",
   "explorer.autoReveal": false,
-  "explorer.openEditors.visible": 0,
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
   "files.autoSave": "off",
@@ -32,14 +31,13 @@
     "*.svelte": "html"
   },
   "files.eol": "\n",
-  "files.insertFinalNewline": true,
+  "files.insertFinalNewline": false,
   "files.trimTrailingWhitespace": true,
   "gitlens.currentLine.enabled": false,
   "gitlens.currentLine.pullRequests.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.telemetry.enabled": false,
-  "html.format.endWithNewline": true,
   "html.format.wrapAttributes": "aligned-multiple",
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
@@ -83,7 +81,7 @@
     { "before": ["<leader>", "s", "h"], "commands": ["workbench.action.focusPreviousGroup"] },
     { "before": ["<leader>", "s", "l"], "commands": ["workbench.action.focusNextGroup"] },
     { "before": ["<leader>", "t", "h"], "commands": ["workbench.action.previousEditor"] },
-    { "before": ["<leader>", "t", "l"], "commands": ["workbench.action.nextEditor"] }
+    { "before": ["<leader>", "t", "l"], "commands": ["workbench.action.nextEditor"] },
     { "before": ["<leader>", "t", "m", "h"], "commands": ["workbench.action.moveEditorLeftInGroup"] },
     { "before": ["<leader>", "t", "m", "l"], "commands": ["workbench.action.moveEditorRightInGroup"] },
     { "before": ["z", "A"], "commands": ["editor.unfoldRecursively"] }
@@ -94,7 +92,6 @@
   "window.newWindowDimensions": "inherit",
   "window.restoreWindows": "none",
   "window.title": "${dirty}${rootName}",
-  "workbench.activityBar.visible": false,
 	"workbench.colorTheme": "GitHub Light",
   "workbench.editor.wrapTabs": true,
   "workbench.enableExperiments": false,
@@ -499,5 +496,10 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
+  },
+  "diffEditor.experimental.useVersion2": true,
+  "workbench.activityBar.visible": false,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
   }
 }
