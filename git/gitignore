@@ -7,3 +7,5 @@ tags
 
 .env.sh
 .secret
+
+nohup.out
