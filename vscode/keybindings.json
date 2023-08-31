@@ -299,5 +299,9 @@
   {
     "key": "alt+v c",
     "command": "terminal.focus"
+  },
+  {
+    "key": "alt+v p",
+    "command": "workbench.panel.markers.view.focus"
   }
 ]

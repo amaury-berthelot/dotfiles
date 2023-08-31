@@ -498,8 +498,8 @@
     }
   },
   "diffEditor.experimental.useVersion2": true,
-  "workbench.activityBar.visible": false,
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
-  }
+  },
+  "workbench.activityBar.visible": false
 }
